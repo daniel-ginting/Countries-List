@@ -1,13 +1,11 @@
 import './App.css';
-import Card from './Components/Card';
+import CardList from './Components/CardList';
 import 'tachyons';
 
 function App() {
   return (
     <div className="App">
-      <Card/>
-      <Card/>
-      <Card/>
+      <CardList/>
     </div>
   );
 }

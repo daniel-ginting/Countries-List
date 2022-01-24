@@ -20,6 +20,34 @@ export const Countries = [
     capital: 'Brasilia',
     flag: 'https://flagcdn.com/br.svg'
     },
+    {
+        name: 'Iceland',
+        population: '206,135,893',
+        region: 'Americas',
+        capital: 'Brasilia',
+        flag: 'https://flagcdn.com/is.svg'
+        },
+    {
+    name: 'Afganistan',
+    population: '206,135,893',
+    region: 'Americas',
+    capital: 'Brasilia',
+    flag: 'https://flagcdn.com/af.svg'
+    },
+    {
+        name: 'Albania',
+        population: '206,135,893',
+        region: 'Americas',
+        capital: 'Brasilia',
+        flag: 'https://flagcdn.com/al.svg'
+        },
+        {
+            name: 'Albania',
+            population: '206,135,893',
+            region: 'Americas',
+            capital: 'Brasilia',
+            flag: 'https://flagcdn.com/dz.svg'
+            },
 ]
     
     

@@ -1,6 +1,7 @@
 import CardList from "./CardList/CardList";
 import SearchBox from "./SearchBox/SearchBox";
 import { Component } from "react";
+import Filter from "./Filter/Filter";
 
 class Body extends Component{
     constructor() {
@@ -30,6 +31,7 @@ class Body extends Component{
         return (
             <div>
                 <SearchBox searchChange={this.onSearchChange}/>
+                <Filter/>
                 <CardList countries={filteredCountries}/>
             </div>
         )

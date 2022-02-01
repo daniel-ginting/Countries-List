@@ -1,16 +1,28 @@
 import Dropdown from "./Dropdown/Dropdown";
 import { useState } from "react";
+import react from "react";
 
-const Filter = ({filterChange}) => {
-    const [selected, setSelected] = useState("Filter by region");
-    return (
-        <>
+class Filter extends react.Component{
+    constructor(){
+        super();
+        this.state = {
+            selected: 'Filter by region'
+        }
+    }
+    setSelected = (option) => {
+        this.setState({selected: option})
+    }
+    render(){
+        return (
+            <>
             <Dropdown 
-                selected={selected} 
-                setSelected={setSelected} 
+                selected={this.state.selected} 
+                setSelected={this.setSelected} 
             />   
-        </>         
-    )
-};
+        </>  
+        )
+    }
+}
+
 
 export default Filter;

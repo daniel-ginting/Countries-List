@@ -1,9 +1,16 @@
-const Filter = () => {
+import Dropdown from "./Dropdown/Dropdown";
+import { useState } from "react";
+
+const Filter = ({filterChange}) => {
+    const [selected, setSelected] = useState("Filter by region");
     return (
-        <div>
-            
-        </div>     
+        <>
+            <Dropdown 
+                selected={selected} 
+                setSelected={setSelected} 
+            />   
+        </>         
     )
-}
+};
 
 export default Filter;

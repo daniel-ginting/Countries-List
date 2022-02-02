@@ -1,8 +1,8 @@
 import CardList from "./CardList/CardList";
 import SearchBox from "./SearchBox/SearchBox";
 import { Component } from "react";
-import Filter from "./Filter/Filter";
-import Dropdown from "./Filter/Dropdown/Dropdown";
+import Dropdown from "./Dropdown/Dropdown";
+import DetailPage from "./DetailPage/DetailPage";
 
 class Body extends Component{
     constructor() {
@@ -10,7 +10,8 @@ class Body extends Component{
         this.state = {
             countries: [],
             searchField: '',
-            selected: 'Filter by region'
+            selected: 'Filter by region',
+            route: 'home'
         }
     }
 
@@ -33,6 +34,17 @@ class Body extends Component{
         this.setState({selected: option})
     }
 
+    onChangeRoute = (country) => {
+        this.setState({route: country})
+    }
+
+    onClickBorder = (code) => {
+        const selected = this.state.countries.filter(country => {
+            return country.alpha3Code.includes(code)
+        })
+        this.setState({route: selected[0].name})
+    }
+
     render(){
         const filterRegion = this.state.countries.filter(country => {
             if (this.state.selected === 'Filter by region'){
@@ -44,18 +56,49 @@ class Body extends Component{
         const filteredCountries = filterRegion.filter(country => {
             return country.name.toLowerCase().includes(this.state.searchField.toLowerCase())
         })
-        return (
-            <div>
-                <SearchBox searchChange={this.onSearchChange}/>
-                <Dropdown 
-                    selected={this.state.selected} 
-                    setSelected={this.setSelected} 
-                />
-                <CardList countries={filteredCountries}/>
-                {console.log(this.state.selected)}
-            </div>
+        const selectedCountry = this.state.countries.filter(country => {
+            return country.name.includes(this.state.route)
+        }
+
         )
+        
+            if (this.state.countries.length === 0){
+                return <h1>Loading...</h1>
+            } else {
+                if (this.state.route === 'home'){
+                    return (
+                        <div>
+                            
+                            <SearchBox searchChange={this.onSearchChange}/>
+                            <Dropdown 
+                                selected={this.state.selected} 
+                                setSelected={this.setSelected} 
+                            />
+                            <CardList 
+                                countries={filteredCountries}
+                                changeRoute={this.onChangeRoute}/>
+                            {console.log(selectedCountry)}
+                            {console.log(this.state.route)}
+                        </div>
+                    
+                    )
+                } else {
+                    return (
+                        <>
+                        <DetailPage
+                        changeRoute={this.onChangeRoute}
+                        country={selectedCountry[0]}
+                        clickBorder={this.onClickBorder}/>
+                        {console.log(selectedCountry[0])}
+                        </>
+                        
+                    )
+                }
+            }
+        }
+        
+        
     }
-}
+
 
 export default Body;

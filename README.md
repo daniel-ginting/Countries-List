@@ -1,6 +1,6 @@
-# SDfs
+# Countries List using API
 
-This is a solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca). 
+This App displays list of countries using an API and user are able to filter the list using searchBox and by filtering by region.
 
 ## Table of contents
 

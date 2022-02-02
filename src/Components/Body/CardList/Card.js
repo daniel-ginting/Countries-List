@@ -1,9 +1,9 @@
 import './Card.css';
 
 
-const Card = ({ flag, name, population, region, capital, changeRoute }) => {
+const Card = ({ flag, name, population, region, capital, changeRoute, code }) => {
         const handleChangeRoute = () => {
-            changeRoute(name)
+            changeRoute(code)
         }
         return (
             <div className="bg-light-gray br3 grow dib pa1 ma4" onClick={handleChangeRoute}>

@@ -42,7 +42,8 @@ class Body extends Component{
         const selected = this.state.countries.filter(country => {
             return country.alpha3Code.includes(code)
         })
-        this.setState({route: selected[0].name})
+        this.setState({route: code})
+        console.log(code);
     }
 
     render(){
@@ -57,7 +58,7 @@ class Body extends Component{
             return country.name.toLowerCase().includes(this.state.searchField.toLowerCase())
         })
         const selectedCountry = this.state.countries.filter(country => {
-            return country.name.includes(this.state.route)
+            return country.alpha3Code === this.state.route
         }
 
         )
@@ -77,7 +78,7 @@ class Body extends Component{
                             <CardList 
                                 countries={filteredCountries}
                                 changeRoute={this.onChangeRoute}/>
-                            {console.log(selectedCountry)}
+                            {console.log(selectedCountry[0])}
                             {console.log(this.state.route)}
                         </div>
                     
@@ -90,6 +91,7 @@ class Body extends Component{
                         country={selectedCountry[0]}
                         clickBorder={this.onClickBorder}/>
                         {console.log(selectedCountry[0])}
+                        {console.log(this.state.route)}
                         </>
                         
                     )

@@ -12,6 +12,7 @@ const CardList = ({countries, changeRoute}) => {
                     population={countries[i].population} region={countries[i].region} 
                     capital={countries[i].capital}
                     flag={countries[i].flag}
+                    code={countries[i].alpha3Code}
                     changeRoute={changeRoute}/>
                 }
             )}

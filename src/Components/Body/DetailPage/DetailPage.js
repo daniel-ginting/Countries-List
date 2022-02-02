@@ -5,6 +5,25 @@ const DetailPage = ({changeRoute, country, clickBorder}) => {
     const handleClickBorder = () => {
         clickBorder(country.alpha3code)
     }
+    function renderElement(){
+        if (country.hasOwnProperty('borders')){
+            return country.borders.map(border => {
+                return (
+                    <>
+                    <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-10 border border-slate-250 rounded shadow-2xl"
+                    onClick={() => clickBorder(border)}>
+                        {border}
+                    </button>
+                    </>
+                    
+                )
+                }
+            )
+            
+        } else {
+            return <p>Not Surrounded</p>
+        }
+    }
     return (
         <div className='grid grid-rows-3 grid-cols-4 gap-4'>
             <div className="col-span-4 h-24 text-left">
@@ -42,14 +61,9 @@ const DetailPage = ({changeRoute, country, clickBorder}) => {
             </div>    
             <div className="col-span-2 flex-wrap text-left ml-10 mt-20">
                 <h3 className="inline">Border Countries:</h3>
-                {country.borders.map(border =>{
-                    return (
-                        <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-10 border border-slate-250 rounded shadow-2xl"
-                        onClick={() => clickBorder(border)}>
-                            {border}
-                        </button>
-                    )
-                })}
+                
+                {renderElement()}
+                
             </div>                                    
         </div>
     )

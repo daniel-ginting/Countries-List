@@ -21,8 +21,8 @@ What this app is capable:
 
 ## Live Preview
 
-Click the link below for a quick preview of the app:\ 
-[https://daniel-ginting-countries-list.herokuapp.com](https://daniel-ginting-countries-list.herokuapp.com)
+Click the link below for a quick preview of the app:\
+https://daniel-ginting-countries-list.herokuapp.com
 
 
 ## Technologies and Tools

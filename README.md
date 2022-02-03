@@ -1,4 +1,4 @@
-# Countries List using API
+# List of Countries
 
 ![](./Screenshot.png)
 
@@ -6,20 +6,8 @@
 
 This App displays a list of countries from an API ([RESTCountries API](https://restcountries.com/)) and user are able to filter the list using SearchBox and by filtering the countries by region.
 
-## Table of contents
 
-- [Overview](#overview)
-  - [Features](#features)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-- [Author](#author)
-
-
-## Overview
-
-### Features
+## Features
 
 What this app is capable:
 
@@ -31,14 +19,13 @@ What this app is capable:
 <!-- - Toggle the color scheme between light and dark mode *(optional)* -->
 
 
-### Links
+## Live Preview
 
-- Github Repo: [https://github.com/daniel-ginting/countries](https://github.com/daniel-ginting/countries)
-- Live Site URL: [https://daniel-ginting-countries-list.herokuapp.com](https://daniel-ginting-countries-list.herokuapp.com)
+Click the link below for a quick preview of the app:\ 
+[https://daniel-ginting-countries-list.herokuapp.com](https://daniel-ginting-countries-list.herokuapp.com)
 
-## My process
 
-### Technologies and Tools
+## Technologies and Tools
 
 - Semantic HTML5 markup
 - CSS custom properties
@@ -50,9 +37,24 @@ What this app is capable:
 
 ## Author
 
+This App is made with passion from scratch by Daniel Ginting (me):
 <!-- - Website - [Add your name here](https://www.your-site.com) -->
 - Github - [@daniel-ginting](https://github.com/daniel-ginting)
 - LinkedIn - [Daniel Ginting](https://www.linkedin.com/in/daniel-ginting-409813224/)
+- Discord - [DanielGinting#0651](https://discordapp.com/users/796539553761984565)
+
+## Run App Local
+If you are interested on cloning this repo:
+1. Clone this repo to your local machine
+2. From the command-line, run
+```bash
+npm install
+``` 
+
+3. After the packages have been installed, start the live preview
+```bash
+npm start
+```
 
 ## Feedback
 You can also countribute or give feedback on this project.

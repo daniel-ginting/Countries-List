@@ -57,6 +57,9 @@ npm start
 ```
 
 ## Feedback
+
+This app is fairly new and may contain some bugs, don't hesitate to inform me about them.
+
 You can also countribute or give feedback on this project.
 
 Reach me on discord:\

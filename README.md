@@ -9,7 +9,7 @@ This App displays a list of countries from an API ([RESTCountries API](https://r
 
 ## Features
 
-What this app is capable:
+What this app is capable
 
 - See all countries from the [API](https://restcountries.com/) on the homepage
 - Search up for a country using the searchbox `input` field

@@ -43,6 +43,10 @@ This App is made with passion from scratch by Daniel Ginting (me):
 - LinkedIn - [Daniel Ginting](https://www.linkedin.com/in/daniel-ginting-409813224/)
 - Discord - [DanielGinting#0651](https://discordapp.com/users/796539553761984565)
 
+Styling with the help of Dat Truong:
+- Github = [@dat.truong](https://github.com/dat-truong196nt)
+- LinkedIn - [Dat Truong](https://www.linkedin.com/in/truongquocdat196nt)
+
 ## Run App Local
 If you are interested on cloning this repo:
 1. Clone this repo to your local machine

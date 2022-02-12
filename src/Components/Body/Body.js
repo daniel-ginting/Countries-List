@@ -71,7 +71,7 @@ class Body extends Component{
 
         // This is the first stage of filtering the countries, filtering by region
         const filterRegion = this.state.countries.filter(country => {
-            if (this.state.selected === 'Filter by region'){
+            if (this.state.selected === 'Filter by region' || this.state.selected === 'None'){
                 return country;
             } else {
                 return country.region.toLowerCase().includes(this.state.selected.toLowerCase())

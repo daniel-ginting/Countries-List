@@ -3,7 +3,7 @@ import './Dropdown.css';
 
 function Dropdown({ selected, setSelected }) {
   const [isActive, setIsActive] = useState(false);
-  const options = ["Africa", "Americas", "Asia", 'Europe', 'Oceania'];
+  const options = ["Africa", "Americas", "Asia", 'Europe', 'Oceania', 'None'];
   return (
     <div className="dropdown">
       <div 

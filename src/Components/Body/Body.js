@@ -3,6 +3,7 @@ import SearchBox from "./SearchBox/SearchBox";
 import { Component } from "react";
 import Dropdown from "./Dropdown/Dropdown";
 import DetailPage from "./DetailPage/DetailPage";
+import './Body.css';
 
 class Body extends Component{
     constructor() {
@@ -11,7 +12,14 @@ class Body extends Component{
             countries: [],
             searchField: '',
             selected: 'Filter by region',
-            route: 'home'
+            route: 'home',
+            perPage: 10,
+            pageTotal: 0,
+            currentPage: 1,
+            offset: 0,
+            data: [],
+            perPage: 5,
+            currentPage: 0
         }
     }
 
@@ -23,7 +31,7 @@ class Body extends Component{
         .then(countries => {
             this.setState({ countries: countries })
         })
-        
+
     }
 
     onSearchChange = (event) => {
@@ -46,7 +54,22 @@ class Body extends Component{
         console.log(code);
     }
 
+    handlePageClick = (e) => {
+        const selectedPage = e.selected;
+        const offset = selectedPage * this.state.perPage;
+
+        this.setState({
+            currentPage: selectedPage,
+            offset: offset
+        }, () => {
+            this.receivedData()
+        });
+
+    };
+
     render(){
+
+        // This is the first stage of filtering the countries, filtering by region
         const filterRegion = this.state.countries.filter(country => {
             if (this.state.selected === 'Filter by region'){
                 return country;
@@ -54,9 +77,13 @@ class Body extends Component{
                 return country.region.toLowerCase().includes(this.state.selected.toLowerCase())
             }            
         })
+
+        // After filter by region, we filter by searchbox.
         const filteredCountries = filterRegion.filter(country => {
             return country.name.toLowerCase().includes(this.state.searchField.toLowerCase())
         })
+
+        // This variable functions as route changer
         const selectedCountry = this.state.countries.filter(country => {
             return country.alpha3Code === this.state.route
         }
@@ -79,7 +106,8 @@ class Body extends Component{
                                 countries={filteredCountries}
                                 changeRoute={this.onChangeRoute}/>
                             {console.log(selectedCountry[0])}
-                            {console.log(this.state.route)}
+                            {console.log(this.state.countries)}
+
                         </div>
                     
                     )
@@ -91,7 +119,6 @@ class Body extends Component{
                         country={selectedCountry[0]}
                         clickBorder={this.onClickBorder}/>
                         {console.log(selectedCountry[0])}
-                        {console.log(this.state.route)}
                         </>
                         
                     )

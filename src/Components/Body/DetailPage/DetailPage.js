@@ -1,3 +1,5 @@
+import './DetailPage.css';
+
 const DetailPage = ({changeRoute, country, clickBorder}) => {
     const handleClick = () => {
         changeRoute('home')
@@ -10,7 +12,7 @@ const DetailPage = ({changeRoute, country, clickBorder}) => {
             return country.borders.map(border => {
                 return (
                     <>
-                    <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-10 border border-slate-250 rounded shadow-2xl"
+                    <button
                     onClick={() => clickBorder(border)}>
                         {border}
                     </button>
@@ -25,47 +27,66 @@ const DetailPage = ({changeRoute, country, clickBorder}) => {
         }
     }
     return (
-        <div className='grid grid-rows-3 grid-cols-4 gap-4'>
-            <div className="col-span-4 h-24 text-left">
-                <button 
-                    className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-10 border border-slate-250 rounded shadow-2xl mt-20 ml-20"
-                    onClick={handleClick}>
-                    Back
-                </button>
-            </div>           
-            <img 
-                src={country.flag} 
-                style={{
-                    width:'600px', 
-                    height:'400px'
-                }}
-                alt="flag"
-                className="col-span-2 row-span-2 ml-20"/>
-                
-            <div className="row-span-1 grid-cols-2 text-left ml-10">
-                <h1 className="text-3xl font-extrabold mb-10 col-span-1">{country.name}</h1>    
-                <ul className="col-span-1">
-                    <li>Native Name: {country.nativeName}</li>
-                    <li>Population: {country.population}</li>
-                    <li>Region: {country.region}</li>
-                    <li>SubRegion: {country.subregion}</li>
-                    <li>Capital: {country.capital}</li>
-                </ul>
+        <>
+        <div style={{textAlign:'left'}}>
+            <button 
+                className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-10 border border-slate-250 rounded shadow-2xl text-left mt-20 ml-40"
+                style={{textAlign:'left'}}
+                onClick={handleClick}>
+                Back
+            </button>
+         </div>
+        <section class="nation">
+        <img src={country.flag} alt="Flag" class="nation__flag"/>
+        <div class="nation__info">
+            <h3 class="nation__name">{country.name}</h3>
+            <div class="nation__details">
+                <div class="nation__details--1">
+                    <div class="nation__detail-item">
+                        <div class="nation__detail-text">Native Name:</div>
+                        <p class="nation__detail-value">{country.nativeName}</p>
+                    </div>
+                    <div class="nation__detail-item">
+                        <div class="nation__detail-text">Population:</div>
+                        <p class="nation__detail-value">{country.population}</p>
+                    </div>
+                    <div class="nation__detail-item">
+                        <div class="nation__detail-text">Region:</div>
+                        <p class="nation__detail-value">{country.region}</p>
+                    </div>
+                    <div class="nation__detail-item">
+                        <div class="nation__detail-text">Sub Region:</div>
+                        <p class="nation__detail-value">{country.subregion}</p>
+                    </div>
+                    <div class="nation__detail-item">
+                        <div class="nation__detail-text">Capital:</div>
+                        <p class="nation__detail-value">{country.capital}</p>
+                    </div>
+                </div>
+                <div class="nation__details--2">
+                    <div class="nation__detail-item">
+                        <div class="nation__detail-text">Top Level Domain:</div>
+                        <p class="nation__detail-value">{country.topLevelDomain}</p>
+                    </div>
+                    <div class="nation__detail-item">
+                        <div class="nation__detail-text">Currencies:</div>
+                        <p class="nation__detail-value">{country.currencies[0].name}</p>
+                    </div>
+                    <div class="nation__detail-item">
+                        <div class="nation__detail-text">Languages:</div>
+                        <p class="nation__detail-value">{country.languages[0].name}</p>
+                    </div>
+                </div>
             </div>
-            <div className="text-left mt-20">
-                <ul className="col-span-1 mt-5">
-                    <li>Top Level Domain: {country.topLevelDomain}</li>
-                    <li>Currencies: {country.currencies[0].name}</li>
-                    <li>Languages: {country.languages[0].name}</li>
-                </ul>  
-            </div>    
-            <div className="col-span-2 flex-wrap text-left ml-10 mt-20">
-                <h3 className="inline">Border Countries:</h3>
-                
-                {renderElement()}
-                
-            </div>                                    
-        </div>
+            <div class="nation__border">
+                <div class="nation__border-text">Border Countries</div>
+                    <div class="nation__border-contries">
+                        {renderElement()}
+                    </div>
+                </div>
+            </div>
+        </section>
+        </>
     )
 }
 

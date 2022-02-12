@@ -4,9 +4,6 @@ const DetailPage = ({changeRoute, country, clickBorder}) => {
     const handleClick = () => {
         changeRoute('home')
     }
-    const handleClickBorder = () => {
-        clickBorder(country.alpha3code)
-    }
     function renderElement(){
         if (country.hasOwnProperty('borders')){
             return country.borders.map(border => {

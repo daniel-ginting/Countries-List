@@ -6,21 +6,29 @@ const DetailPage = ({changeRoute, country, clickBorder}) => {
     }
     function renderElement(){
         if (country.hasOwnProperty('borders')){
-            return country.borders.map(border => {
+            return country.borders.map((border, i) => {
                 return (
-                    <>
                     <button
-                    onClick={() => clickBorder(border)}>
+                    key={`${border}-${i}`}
+                    onClick={() => clickBorder(border)}
+                    >
                         {border}
                     </button>
-                    </>
-                    
                 )
-                }
+            }
             )
             
         } else {
             return <p>Not Surrounded</p>
+        }
+    }
+
+    // This function acts as a checker if a country has a currency because some (like Antartica), doesn't have a currency
+    const checkCurrency = () => {
+        if (country.hasOwnProperty('borders')){
+            return country.currencies[0].name
+        } else {
+            return 'No currency'
         }
     }
     return (
@@ -33,51 +41,51 @@ const DetailPage = ({changeRoute, country, clickBorder}) => {
                 Back
             </button>
          </div>
-        <section class="nation">
-        <img src={country.flag} alt="Flag" class="nation__flag"/>
-        <div class="nation__info">
-            <h3 class="nation__name">{country.name}</h3>
-            <div class="nation__details">
-                <div class="nation__details--1">
-                    <div class="nation__detail-item">
-                        <div class="nation__detail-text">Native Name:</div>
-                        <p class="nation__detail-value">{country.nativeName}</p>
+        <section className="nation">
+        <img src={country.flag} alt="Flag" className="nation__flag"/>
+        <div className="nation__info">
+            <h3 className="nation__name">{country.name}</h3>
+            <div className="nation__details">
+                <div className="nation__details--1">
+                    <div className="nation__detail-item">
+                        <div className="nation__detail-text">Native Name:</div>
+                        <p className="nation__detail-value">{country.nativeName}</p>
                     </div>
-                    <div class="nation__detail-item">
-                        <div class="nation__detail-text">Population:</div>
-                        <p class="nation__detail-value">{country.population}</p>
+                    <div className="nation__detail-item">
+                        <div className="nation__detail-text">Population:</div>
+                        <p className="nation__detail-value">{country.population}</p>
                     </div>
-                    <div class="nation__detail-item">
-                        <div class="nation__detail-text">Region:</div>
-                        <p class="nation__detail-value">{country.region}</p>
+                    <div className="nation__detail-item">
+                        <div className="nation__detail-text">Region:</div>
+                        <p className="nation__detail-value">{country.region}</p>
                     </div>
-                    <div class="nation__detail-item">
-                        <div class="nation__detail-text">Sub Region:</div>
-                        <p class="nation__detail-value">{country.subregion}</p>
+                    <div className="nation__detail-item">
+                        <div className="nation__detail-text">Sub Region:</div>
+                        <p className="nation__detail-value">{country.subregion}</p>
                     </div>
-                    <div class="nation__detail-item">
-                        <div class="nation__detail-text">Capital:</div>
-                        <p class="nation__detail-value">{country.capital}</p>
+                    <div className="nation__detail-item">
+                        <div className="nation__detail-text">Capital:</div>
+                        <p className="nation__detail-value">{country.capital}</p>
                     </div>
                 </div>
-                <div class="nation__details--2">
-                    <div class="nation__detail-item">
-                        <div class="nation__detail-text">Top Level Domain:</div>
-                        <p class="nation__detail-value">{country.topLevelDomain}</p>
+                <div className="nation__details--2">
+                    <div className="nation__detail-item">
+                        <div className="nation__detail-text">Top Level Domain:</div>
+                        <p className="nation__detail-value">{country.topLevelDomain}</p>
                     </div>
-                    <div class="nation__detail-item">
-                        <div class="nation__detail-text">Currencies:</div>
-                        <p class="nation__detail-value">{country.currencies[0].name}</p>
+                    <div className="nation__detail-item">
+                        <div className="nation__detail-text">Currencies:</div>
+                        <p className="nation__detail-value">{checkCurrency()}</p>
                     </div>
-                    <div class="nation__detail-item">
-                        <div class="nation__detail-text">Languages:</div>
-                        <p class="nation__detail-value">{country.languages[0].name}</p>
+                    <div className="nation__detail-item">
+                        <div className="nation__detail-text">Languages:</div>
+                        <p className="nation__detail-value">{country.languages[0].name}</p>
                     </div>
                 </div>
             </div>
-            <div class="nation__border">
-                <div class="nation__border-text">Border Countries</div>
-                    <div class="nation__border-contries">
+            <div className="nation__border">
+                <div className="nation__border-text">Border Countries</div>
+                    <div className="nation__border-contries">
                         {renderElement()}
                     </div>
                 </div>

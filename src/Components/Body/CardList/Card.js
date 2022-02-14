@@ -6,7 +6,7 @@ const Card = ({ flag, name, population, region, capital, changeRoute, code }) =>
             changeRoute(code)
         }
         return (
-            <div className="bg-light-gray br3 grow dib pa1 ma4" onClick={handleChangeRoute}>
+            <button className="bg-light-gray br3 grow dib pa1 ma4" onClick={handleChangeRoute}>
                 <img src={flag} alt='flag' className="image"/>
                 <div>
                     <h2>{name}</h2>
@@ -14,7 +14,7 @@ const Card = ({ flag, name, population, region, capital, changeRoute, code }) =>
                     <p>Region: {region}</p>
                     <p>Capital: {capital}</p>
                 </div>
-            </div>
+            </button>
         )
     }
 

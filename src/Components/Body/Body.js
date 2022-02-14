@@ -12,14 +12,7 @@ class Body extends Component{
             countries: [],
             searchField: '',
             selected: 'Filter by region',
-            route: 'home',
-            perPage: 10,
-            pageTotal: 0,
-            currentPage: 1,
-            offset: 0,
-            data: [],
-            perPage: 5,
-            currentPage: 0
+            route: 'home'
         }
     }
 
@@ -47,11 +40,7 @@ class Body extends Component{
     }
 
     onClickBorder = (code) => {
-        const selected = this.state.countries.filter(country => {
-            return country.alpha3Code.includes(code)
-        })
         this.setState({route: code})
-        console.log(code);
     }
 
     handlePageClick = (e) => {
@@ -105,8 +94,6 @@ class Body extends Component{
                             <CardList 
                                 countries={filteredCountries}
                                 changeRoute={this.onChangeRoute}/>
-                            {console.log(selectedCountry[0])}
-                            {console.log(this.state.countries)}
 
                         </div>
                     
@@ -118,7 +105,6 @@ class Body extends Component{
                         changeRoute={this.onChangeRoute}
                         country={selectedCountry[0]}
                         clickBorder={this.onClickBorder}/>
-                        {console.log(selectedCountry[0])}
                         </>
                         
                     )

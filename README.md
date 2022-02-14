@@ -22,7 +22,7 @@ What this app is capable:
 ## Live Preview
 
 Click the link below for a quick preview of the app:\
-https://daniel-ginting-countries-list.herokuapp.com
+https://unruffled-swartz-d08cf3.netlify.app/
 
 
 ## Technologies and Tools

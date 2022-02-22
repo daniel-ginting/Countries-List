@@ -14,7 +14,7 @@ What this app is capable:
 - See all countries from the [API](https://restcountries.com/) on the homepage
 - Search up for a country using the searchbox `input` field
 - Filter countries by region or none
-- Click on a country to see more detailed information on a separate 
+- Click on a country to see more detailed information on a separate p
 - Click through to the border countries on the detail page
 <!-- - Toggle the color scheme between light and dark mode *(optional)* -->
 

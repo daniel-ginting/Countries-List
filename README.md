@@ -1,4 +1,4 @@
-# List of Cou
+# List of Coun
 
 ![](./Screenshot.png)
 

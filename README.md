@@ -1,4 +1,4 @@
-# List of Countr
+# List of Countri
 
 ![](./Screenshot.png)
 

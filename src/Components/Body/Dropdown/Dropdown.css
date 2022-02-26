@@ -43,3 +43,11 @@
   .dropdown .dropdown-content .dropdown-item:hover {
     background: #f4f4f4;
   }
+
+  @media only screen and (max-width: 510px) {
+    .dropdown {
+      margin: 0px auto;
+      margin-bottom: 70px;
+      margin-top: -50px;
+    }
+  }

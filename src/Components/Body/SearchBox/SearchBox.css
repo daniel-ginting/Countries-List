@@ -1,0 +1,19 @@
+div {
+    text-align: left;
+}
+
+input {
+    margin-top: 30px;
+    margin-left: 50px;
+}
+
+@media only screen and (max-width: 510px) {
+    div {
+        text-align: center;
+    }
+    input {
+        margin: 0px auto;
+      margin-bottom: 70px;
+      margin-top: 10px;
+    }
+  }

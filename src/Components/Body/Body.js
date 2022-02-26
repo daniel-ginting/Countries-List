@@ -3,6 +3,8 @@ import SearchBox from "./SearchBox/SearchBox";
 import { Component } from "react";
 import Dropdown from "./Dropdown/Dropdown";
 import DetailPage from "./DetailPage/DetailPage";
+import Pagination from "./Pagination/Pagination";
+import Scroll from "./Scroll/Scroll";
 import './Body.css';
 
 class Body extends Component{
@@ -12,7 +14,9 @@ class Body extends Component{
             countries: [],
             searchField: '',
             selected: 'Filter by region',
-            route: 'home'
+            route: 'home',
+            currentPage: 1,
+            countryPerPage: 12
         }
     }
 
@@ -24,11 +28,11 @@ class Body extends Component{
         .then(countries => {
             this.setState({ countries: countries })
         })
-
     }
 
     onSearchChange = (event) => {
         this.setState({searchField: event.target.value});
+        this.setState({currentPage: 1})
     }
 
     setSelected = (option) => {
@@ -56,6 +60,11 @@ class Body extends Component{
 
     };
 
+    // Change pagination page
+    paginate = (pageNumber) => {
+        this.setState({currentPage: pageNumber})
+    }
+
     render(){
 
         // This is the first stage of filtering the countries, filtering by region
@@ -75,26 +84,35 @@ class Body extends Component{
         // This variable functions as route changer
         const selectedCountry = this.state.countries.filter(country => {
             return country.alpha3Code === this.state.route
-        }
+        })
 
-        )
+        //Get current post
+        const indexOfLastPost = this.state.currentPage * this.state.countryPerPage;
+        const indexOfFirstPost = indexOfLastPost - this.state.countryPerPage;
+        const currentPost = filteredCountries.slice(indexOfFirstPost, indexOfLastPost)
         
+        // Elements to render
             if (this.state.countries.length === 0){
                 return <h1>Loading...</h1>
             } else {
                 if (this.state.route === 'home'){
                     return (
                         <div>
-                            
                             <SearchBox searchChange={this.onSearchChange}/>
                             <Dropdown 
                                 selected={this.state.selected} 
                                 setSelected={this.setSelected} 
                             />
-                            <CardList 
-                                countries={filteredCountries}
-                                changeRoute={this.onChangeRoute}/>
-
+                            <Scroll>
+                                <CardList 
+                                    countries={currentPost}
+                                    changeRoute={this.onChangeRoute}/>
+                                <Pagination   
+                                    countryPerPage={this.state.countryPerPage} 
+                                    totalCountry={filteredCountries.length}
+                                    paginate={this.paginate}
+                                />
+                            </Scroll>
                         </div>
                     
                     )

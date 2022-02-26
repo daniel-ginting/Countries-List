@@ -3,13 +3,14 @@
     height: 100vh;
   }
   .dropdown {
-    width: 400px;
+    width: 200px;
     user-select: none;
     margin: 100px auto;
     position: relative;
     z-index: 100;
     margin-top: -50px;
     margin-right: 50px;
+    border: 1px solid black;
   }
   .dropdown .dropdown-btn {
     padding: 15px 20px;

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import './Dropdown.css';
+import { FaCaretDown } from 'react-icons/fa';
 
 function Dropdown({ selected, setSelected }) {
   const [isActive, setIsActive] = useState(false);
@@ -10,7 +11,8 @@ function Dropdown({ selected, setSelected }) {
         className="dropdown-btn" 
         onClick={(e) => setIsActive(!isActive)}
       >
-        {selected}
+        {selected} {isActive ? <FaCaretDown style={{transform: 'rotate(180deg)'}}/> : <FaCaretDown/>}
+        
         <span className="fas fa-caret-down"></span>
       </div>
       {isActive && (
@@ -19,6 +21,7 @@ function Dropdown({ selected, setSelected }) {
         >
           {options.map((option) => (
             <div
+            key={option}
               onClick={(e) => {
                 setSelected(option);
                 setIsActive(false);

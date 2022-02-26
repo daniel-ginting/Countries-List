@@ -1,5 +1,5 @@
 import React from 'react';
-import 'bootstrap';
+import './Pagination.css';
 
 const Pagination = ({ countryPerPage, totalCountry, paginate }) => {
     const pageNumbers = [];
@@ -9,20 +9,15 @@ const Pagination = ({ countryPerPage, totalCountry, paginate }) => {
     }
     
     return (
-        // <nav>
-            <ul className='pagination' style={{marginLeft: '10px', marginBottom: '30px'}}>
+        <div>
+            <ul className='pagination'>
                 {pageNumbers.map(number => (
-                    <li key={number} className="page-item">
-                        <a onClick={() => paginate(number)} className='page-link'>
-                            <button>
-                                {number}
-                            </button>
-                        </a>
-                    </li>
+                        <button  key={number} onClick={() => paginate(number)}>
+                            {number}
+                        </button>
                 ))}
             </ul>
-        
-        
+        </div>
     )
 }
 

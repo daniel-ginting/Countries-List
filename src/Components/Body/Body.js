@@ -37,6 +37,7 @@ class Body extends Component{
 
     setSelected = (option) => {
         this.setState({selected: option})
+        this.setState({currentPage: 1})
     }
 
     onChangeRoute = (country) => {

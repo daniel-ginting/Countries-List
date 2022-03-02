@@ -28,7 +28,7 @@ https://unruffled-swartz-d08cf3.netlify.app/
 ## Technologies and Tools
 
 - Semantic HTML5 markup
-- CSS custom pr
+- CSS custom pro
 - CSS Grid
 - [React](https://reactjs.org/) - JS library
 - [Tailwind CSS](https://tailwindcss.com) - For styles

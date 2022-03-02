@@ -11,7 +11,7 @@ This App displays a list of countries from an API ([RESTCountries API](https://r
 
 What this app is capable:
 
-- See all countries from the [API](https://restcountries.com/) on t
+- See all countries from the [API](https://restcountries.com/) on th
 - Search up for a country using the searchbox `input` field
 - Filter countries by region or none
 - Click on a country to see more detailed information on a separate page

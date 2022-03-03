@@ -22,7 +22,7 @@ What this app is capable:
 ## Live Preview
 
 Click the link below for a quick preview of the app:\
-https://unruffled-swartz-d08cf3.netlify.app/
+https://objective-lalande-b285dc.netlify.app/
 
 
 ## Technologies and Tools

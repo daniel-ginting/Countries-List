@@ -44,7 +44,7 @@ This App is made with passion from scratch by Daniel Ginting (me):
 - Discord - [DanielGinting#0651](https://discordapp.com/users/796539553761984565)
 
 Styling with the help of Dat Truong:
-- Github = [@dat.truong](https://github.com/dat-truong196nt)
+- Github - [@dat.truong](https://github.com/dat-truong196nt)
 - LinkedIn - [Dat Truong](https://www.linkedin.com/in/truongquocdat196nt)
 
 ## Run App Local

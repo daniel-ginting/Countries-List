@@ -4,7 +4,7 @@
 
 ## What is this app?
 
-This App displays a list of countries from an API ([RESTCountries API](https://restcountries.com/)) and user are able to filter the list using SearchBox and by filtering
+This App displays a list of countries from an API ([RESTCountries API](https://restcountries.com/)) and user are able to filter the list using SearchBox and by filtering 
 
 
 ## Features
